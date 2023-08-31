@@ -2,9 +2,10 @@
 
 pragma solidity ^0.8.10;
 
-import "../lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol";
+import "lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol";
+import "lib/openzeppelin-contracts/contracts/access/Ownable.sol";
 
-contract MintableToken is ERC20 {
+contract MintableToken is ERC20, Ownable {
   /**
    * @param name Token Name
    * @param symbol Token Symbol
@@ -18,7 +19,7 @@ contract MintableToken is ERC20 {
    * @dev Creates `amount` tokens and assigns them to `to`, increasing
    * the total supply. Only accessible by the contract owner.
    */
-  function mint(uint256 amount, address to) external {
+  function mint(uint256 amount, address to) onlyOwner external {
     _mint(to, amount);
   }
 }
