@@ -1,6 +1,6 @@
 name = "mintable-token"
 version = "1.3"
-description = "Token that allows the owner to mint as many tokens as desired"
+description = "Token that allows anyone to mint as many tokens as desired"
 
 [setting.name]
 defaultValue = "Token"
@@ -11,12 +11,8 @@ defaultValue = "TKN"
 [setting.initialSupply]
 defaultValue = "0"
 
-[setting.owner]
-defaultValue = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
-
 [contract.MintableToken]
-artifact = "MintableToken"
-from = "<%= settings.owner %>"
+artifact = "MintableTokenPermissionlessMint"
 args = [
     "<%= settings.name %>",
     "<%= settings.symbol %>",
