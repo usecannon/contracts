@@ -2,7 +2,6 @@
 
 pragma solidity ^0.8.0;
 
-import {ProxyAdmin} from "lib/openzeppelin-contracts/contracts/proxy/transparent/ProxyAdmin.sol";
 import {TransparentUpgradeableProxy as TransparentUpgradeableProxyBase} from "lib/openzeppelin-contracts/contracts/proxy/transparent/TransparentUpgradeableProxy.sol";
 
 contract TransparentUpgradeableProxy is TransparentUpgradeableProxyBase {
