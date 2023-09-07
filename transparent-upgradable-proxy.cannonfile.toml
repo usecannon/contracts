@@ -7,6 +7,8 @@ defaultValue = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266" # Test Account 0
 
 [setting.implementation]
 
+[setting.abi]
+
 [setting.initialCallData]
 defaultValue = "0x"
 
@@ -19,6 +21,7 @@ from = "<%= settings.admin %>"
 
 [contract.Proxy]
 artifact = "TransparentUpgradeableProxy"
+abi = "<%= settings.abi %>"
 from = "<%= settings.admin %>"
 args = [
     "<%= contracts.EmptyContract.address %>",
