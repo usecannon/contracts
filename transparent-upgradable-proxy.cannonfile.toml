@@ -21,6 +21,7 @@ from = "<%= settings.admin %>"
 
 [contract.Proxy]
 artifact = "TransparentUpgradeableProxy"
+highlight = true
 abi = "<%= settings.abi %>"
 from = "<%= settings.admin %>"
 args = [
