@@ -1,5 +1,5 @@
 name = "transparent-upgradable-proxy"
-version = "4.9.3"
+version = "4.9.4"
 description = "OpenZepellin's Transparent Proxy implementation"
 
 [setting.admin]
@@ -21,6 +21,7 @@ from = "<%= settings.admin %>"
 
 [contract.Proxy]
 artifact = "TransparentUpgradeableProxy"
+highlight = true
 abi = "<%= settings.abi %>"
 from = "<%= settings.admin %>"
 args = [
