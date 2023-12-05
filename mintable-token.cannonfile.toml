@@ -27,3 +27,4 @@ args = [
     "<%= settings.symbol %>",
     "<%= settings.initialSupply %>",
 ]
+highlight = true
