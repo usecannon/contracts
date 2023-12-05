@@ -1,6 +1,9 @@
 name = "transparent-upgradable-proxy"
-version = "4.9.4"
+version = "4.9.5"
 description = "OpenZepellin's Transparent Proxy implementation"
+
+[setting.salt]
+defaultValue = "transparent-upgradable-proxy"
 
 [setting.admin]
 defaultValue = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266" # Test Account 0
@@ -21,7 +24,6 @@ from = "<%= settings.admin %>"
 
 [contract.Proxy]
 artifact = "TransparentUpgradeableProxy"
-highlight = true
 abi = "<%= settings.abi %>"
 from = "<%= settings.admin %>"
 args = [
@@ -30,6 +32,8 @@ args = [
     "<%= settings.initialCallData %>",
 ]
 create2 = true
+salt = "<%= settings.salt %>"
+highlight = true
 depends = ["contract.EmptyContract", "contract.ProxyAdmin"]
 
 [invoke.upgrade]
