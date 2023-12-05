@@ -1,6 +1,10 @@
 name = "mintable-token"
-version = "1.3"
+version = "1.4"
 description = "Token that allows anyone to mint as many tokens as desired"
+preset = "permissionless-mint"
+
+[setting.salt]
+defaultValue = "mintable-token"
 
 [setting.name]
 defaultValue = "Token"
@@ -13,8 +17,10 @@ defaultValue = "0"
 
 [contract.MintableToken]
 artifact = "MintableTokenPermissionlessMint"
+salt = "<%= settings.salt %>"
 args = [
     "<%= settings.name %>",
     "<%= settings.symbol %>",
     "<%= settings.initialSupply %>",
 ]
+highlight = true
