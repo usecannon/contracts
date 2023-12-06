@@ -1,5 +1,5 @@
 name = "mintable-token"
-version = "1.4"
+version = "1.5"
 description = "Token that allows the owner to mint as many tokens as desired"
 preset = "main"
 
@@ -27,4 +27,5 @@ args = [
     "<%= settings.symbol %>",
     "<%= settings.initialSupply %>",
 ]
+create2 = true
 highlight = true
