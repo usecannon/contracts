@@ -1,5 +1,5 @@
 name = "mintable-token"
-version = "1.5"
+version = "1.6"
 description = "Token that allows anyone to mint as many tokens as desired"
 preset = "permissionless-mint"
 
