@@ -1,7 +1,9 @@
 name = "mintable-token"
-version = "1.6"
+version = "1.8"
 description = "Token that allows the owner to mint as many tokens as desired"
 preset = "main"
+
+[setting.owner]
 
 [setting.salt]
 defaultValue = ""
@@ -12,19 +14,20 @@ defaultValue = "Token"
 [setting.symbol]
 defaultValue = "TKN"
 
+[setting.decimals]
+defaultValue = "18"
+
 [setting.initialSupply]
 defaultValue = "0"
 
-[setting.owner]
-defaultValue = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
-
 [contract.MintableToken]
 artifact = "MintableToken"
-from = "<%= settings.owner %>"
 salt = "<%= settings.salt %>"
 args = [
+		"<%= settings.owner %>",
     "<%= settings.name %>",
     "<%= settings.symbol %>",
+		"<%= settings.decimals %>",
     "<%= settings.initialSupply %>",
 ]
 create2 = true
