@@ -1,5 +1,5 @@
 name = "mintable-token"
-version = "1.8"
+version = "2.0"
 description = "Token that allows anyone to mint as many tokens as desired"
 preset = "permissionless-mint"
 
@@ -15,7 +15,7 @@ defaultValue = "TKN"
 [setting.decimals]
 defaultValue = "18"
 
-[contract.MintableToken]
+[contract.Token]
 artifact = "MintableTokenPermissionlessMint"
 salt = "<%= settings.salt %>"
 args = [

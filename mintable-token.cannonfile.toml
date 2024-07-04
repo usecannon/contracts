@@ -1,5 +1,5 @@
 name = "mintable-token"
-version = "1.8"
+version = "2.0"
 description = "Token that allows the owner to mint as many tokens as desired"
 preset = "main"
 
@@ -20,7 +20,7 @@ defaultValue = "18"
 [setting.initialSupply]
 defaultValue = "0"
 
-[contract.MintableToken]
+[contract.Token]
 artifact = "MintableToken"
 salt = "<%= settings.salt %>"
 args = [
