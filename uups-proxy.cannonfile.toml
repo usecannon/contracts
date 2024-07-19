@@ -23,9 +23,6 @@ defaultValue = "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266"
 [setting.abi]
 defaultValue = "<%= JSON.stringify(contracts.InitialModuleBundle.abi) %>"
 
-[setting.initialCallData]
-defaultValue = "0x"
-
 [deploy.InitialProxy]
 artifact = "Proxy"
 args = ["<%= contracts.InitialModuleBundle.address %>", "<%= settings.owner %>"]
