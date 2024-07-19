@@ -1,4 +1,4 @@
-name = "uups-proxy"
+name = "universal-upgradeable-proxy"
 version = "<%= package.version %>"
 preset = 'snx'
 description = "Universal Proxy using Synthetix UUPS contracts"

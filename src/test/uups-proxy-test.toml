@@ -30,14 +30,14 @@ create2 = true
 highlight = true
 
 [clone.SNXProxy]
-source = "uups-proxy:1.0.0@snx"
+source = "universal-upgradeable-proxy:1.0.0@snx"
 options.implementation = "<%= contracts.Token.address %>"
 options.abi = "<%= JSON.stringify(contracts.Token.abi) %>"
 options.salt = "test"
 options.owner = "<%= settings.owner %>"
 
 [clone.OZProxy]
-source = "uups-proxy:1.0.0@oz"
+source = "universal-upgradeable-proxy:1.0.0@oz"
 options.implementation = "<%= contracts.Token.address %>"
 options.abi = "<%= JSON.stringify(contracts.Token.abi) %>"
 options.owner = "<%= settings.owner %>"
