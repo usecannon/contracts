@@ -1,0 +1,43 @@
+name = "proxytest"
+version = "1"
+
+[var.owner]
+owner = "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266"
+
+[var.name]
+name = "Token"
+
+[var.symbol]
+symbol = "TKN"
+
+[var.decimals]
+decimals = "18"
+
+[var.initialSupply]
+initialSupply = "0"
+
+[contract.Token]
+artifact = "MintableTokenUUPS"
+salt = "<%= settings.salt %>"
+args = [
+		"<%= settings.owner %>",
+    "<%= settings.name %>",
+    "<%= settings.symbol %>",
+		"<%= settings.decimals %>",
+    "<%= settings.initialSupply %>",
+]
+create2 = true
+highlight = true
+
+[clone.SNXProxy]
+source = "uups-proxy:1.0.0@snx"
+options.implementation = "<%= contracts.Token.address %>"
+options.abi = "<%= JSON.stringify(contracts.Token.abi) %>"
+options.salt = "test"
+options.owner = "<%= settings.owner %>"
+
+[clone.OZProxy]
+source = "uups-proxy:1.0.0@oz"
+options.implementation = "<%= contracts.Token.address %>"
+options.abi = "<%= JSON.stringify(contracts.Token.abi) %>"
+options.owner = "<%= settings.owner %>"

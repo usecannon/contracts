@@ -1,0 +1,33 @@
+name = "uups-proxy"
+version = "<%= package.version %>"
+preset = 'oz'
+description = "Universal Proxy using OpenZeppelin UUPS contracts"
+
+[deploy.EmptyContract]
+artifact = "EmptyContract"
+create2 = true
+
+# Override this setting in your own cannonfile to replace the implementation address with your own implementation contract address
+[setting.implementation]
+description = "Address of the implementation contract"
+defaultValue = "<%= contracts.EmptyContract.address %>"
+
+[setting.owner]
+description = "Owner user for the proxy"
+defaultValue = "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266"
+
+[setting.abi]
+defaultValue = "<%= JSON.stringify(contracts.EmptyContract.abi) %>"
+
+[setting.initialCallData]
+defaultValue = "0x"
+
+[deploy.InitialProxy]
+artifact = "ERC1967Proxy"
+abi = "<%= settings.abi %>"
+args = [
+  "<%= settings.implementation %>",
+  "<%= settings.initialCallData %>"
+]
+create2 = true
+depends = [ "deploy.EmptyContract" ]

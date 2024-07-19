@@ -1,6 +1,7 @@
 name = "uups-proxy"
 version = "<%= package.version %>"
-description = "Generic UUPS Proxy package using synthetix's proxy contracts"
+preset = 'snx'
+description = "Universal Proxy using Synthetix UUPS contracts"
 
 # `salt` here only affects proxy contract
 [setting.salt]
