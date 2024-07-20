@@ -6,7 +6,7 @@ import "lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol";
 import "lib/openzeppelin-contracts/contracts/access/Ownable.sol";
 import "@synthetixio/core-contracts/contracts/proxy/UUPSImplementation.sol";
 
-contract MintableTokenUUPS is ERC20, Ownable, UUPSImplementation {
+contract MintableTokenSNXUUPS is ERC20, Ownable, UUPSImplementation {
     uint8 immutable _decimals;
 
     /**

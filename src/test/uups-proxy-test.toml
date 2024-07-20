@@ -16,8 +16,21 @@ decimals = "18"
 [var.initialSupply]
 initialSupply = "0"
 
-[contract.Token]
-artifact = "MintableTokenUUPS"
+[deploy.SNXToken]
+artifact = "MintableTokenSNXUUPS"
+salt = "<%= settings.salt %>"
+args = [
+		"<%= settings.owner %>",
+    "<%= settings.name %>",
+    "<%= settings.symbol %>",
+		"<%= settings.decimals %>",
+    "<%= settings.initialSupply %>",
+]
+create2 = true
+highlight = true
+
+[deploy.OZToken]
+artifact = "MintableTokenOZUUPS"
 salt = "<%= settings.salt %>"
 args = [
 		"<%= settings.owner %>",
@@ -31,13 +44,17 @@ highlight = true
 
 [clone.SNXProxy]
 source = "universal-upgradeable-proxy:1.0.0@snx"
-options.implementation = "<%= contracts.Token.address %>"
-options.abi = "<%= JSON.stringify(contracts.Token.abi) %>"
-options.salt = "test"
-options.owner = "<%= settings.owner %>"
+var.implementation = "<%= contracts.SNXToken.address %>"
+var.abi = "<%= JSON.stringify(contracts.SNXToken.abi) %>"
+var.salt = "test"
+var.owner = "<%= settings.owner %>"
+
+depends = ["deploy.SNXToken"]
 
 [clone.OZProxy]
 source = "universal-upgradeable-proxy:1.0.0@oz"
-options.implementation = "<%= contracts.Token.address %>"
-options.abi = "<%= JSON.stringify(contracts.Token.abi) %>"
-options.owner = "<%= settings.owner %>"
+var.implementation = "<%= contracts.OZToken.address %>"
+var.abi = "<%= JSON.stringify(contracts.OZToken.abi) %>"
+var.owner = "<%= settings.owner %>"
+
+depends = ["deploy.OZToken"]
