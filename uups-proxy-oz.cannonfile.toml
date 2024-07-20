@@ -1,4 +1,4 @@
-name = "uups-proxy"
+name = "universal-upgradeable-proxy"
 version = "<%= package.version %>"
 preset = 'oz'
 description = "Universal Proxy using OpenZeppelin UUPS contracts"
