@@ -3,10 +3,6 @@ version = "<%= package.version %>"
 preset = 'snx'
 description = "Universal Proxy using Synthetix UUPS contracts"
 
-[deploy.InitialModuleBundle]
-artifact = "InitialModuleBundle"
-create2 = true
-
 # Override this setting in your own cannonfile to replace the implementation address with your own implementation contract address
 [var.implementation]
 implementation = "<%= contracts.InitialModuleBundle.address %>"
@@ -21,10 +17,14 @@ salt = "main"
 [var.owner]
 owner = "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266"
 
+[deploy.InitialModuleBundle]
+artifact = "InitialModuleBundle"
+create2 = true
+
 [deploy.InitialProxy]
 artifact = "Proxy"
-args = ["<%= contracts.InitialModuleBundle.address %>", "<%= settings.owner %>"]
 abiOf = ["InitialModuleBundle"]
+args = ["<%= contracts.InitialModuleBundle.address %>", "<%= settings.owner %>"]
 salt = "<%= settings.salt %>"
 create2 = true
 
