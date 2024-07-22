@@ -17,9 +17,11 @@ decimals = "18"
 artifact = "MintableTokenSNXUUPS"
 salt = "<%= settings.salt %>"
 args = [
+		"<%= settings.owner %>",
     "<%= settings.name %>",
     "<%= settings.symbol %>",
 		"<%= settings.decimals %>",
+    "<%= settings.initialSupply %>",
 ]
 create2 = true
 highlight = true
@@ -28,9 +30,11 @@ highlight = true
 artifact = "MintableTokenOZUUPS"
 salt = "<%= settings.salt %>"
 args = [
+		"<%= settings.owner %>",
     "<%= settings.name %>",
     "<%= settings.symbol %>",
 		"<%= settings.decimals %>",
+    "<%= settings.initialSupply %>",
 ]
 create2 = true
 highlight = true
