@@ -13,18 +13,13 @@ symbol = "TKN"
 [var.decimals]
 decimals = "18"
 
-[var.initialSupply]
-initialSupply = "0"
-
 [deploy.SNXToken]
 artifact = "MintableTokenSNXUUPS"
 salt = "<%= settings.salt %>"
 args = [
-		"<%= settings.owner %>",
     "<%= settings.name %>",
     "<%= settings.symbol %>",
 		"<%= settings.decimals %>",
-    "<%= settings.initialSupply %>",
 ]
 create2 = true
 highlight = true
@@ -33,17 +28,15 @@ highlight = true
 artifact = "MintableTokenOZUUPS"
 salt = "<%= settings.salt %>"
 args = [
-		"<%= settings.owner %>",
     "<%= settings.name %>",
     "<%= settings.symbol %>",
 		"<%= settings.decimals %>",
-    "<%= settings.initialSupply %>",
 ]
 create2 = true
 highlight = true
 
 [clone.SNXProxy]
-source = "universal-upgradeable-proxy:1.0.0@snx"
+source = "universal-upgradeable-proxy:1.0.0@main"
 var.implementation = "<%= contracts.SNXToken.address %>"
 var.abi = "<%= JSON.stringify(contracts.SNXToken.abi) %>"
 var.salt = "test"

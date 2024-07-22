@@ -1,6 +1,6 @@
 name = "universal-upgradeable-proxy"
 version = "<%= package.version %>"
-preset = 'snx'
+preset = 'main'
 description = "Universal Proxy using Synthetix UUPS contracts"
 
 # Override this setting in your own cannonfile to replace the implementation address with your own implementation contract address
