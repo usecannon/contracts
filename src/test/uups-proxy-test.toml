@@ -13,6 +13,9 @@ symbol = "TKN"
 [var.decimals]
 decimals = "18"
 
+[var.initialSupply]
+decimals = "1000000"
+
 [deploy.SNXToken]
 artifact = "MintableTokenSNXUUPS"
 salt = "<%= settings.salt %>"
