@@ -1,0 +1,40 @@
+name = "universal-upgradeable-proxy"
+version = "<%= package.version %>"
+preset = 'main'
+description = "Universal Proxy using Synthetix UUPS contracts"
+
+# Override this setting in your own cannonfile to replace the implementation address with your own implementation contract address
+[var.implementation]
+implementation = "<%= contracts.InitialModuleBundle.address %>"
+
+[var.abi]
+abi = "<%= JSON.stringify(contracts.InitialModuleBundle.abi) %>"
+
+# `salt` here only affects proxy contract
+[var.salt]
+salt = "main"
+
+[var.owner]
+owner = "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266"
+
+[deploy.InitialModuleBundle]
+artifact = "InitialModuleBundle"
+create2 = true
+
+[deploy.InitialProxy]
+artifact = "Proxy"
+abiOf = ["InitialModuleBundle"]
+args = ["<%= contracts.InitialModuleBundle.address %>", "<%= settings.owner %>"]
+salt = "<%= settings.salt %>"
+create2 = true
+
+[invoke.upgrade_proxy_implementation]
+target = ["InitialProxy"]
+fromCall.func = "owner"
+abi = "UpgradeModule"
+func = "upgradeTo"
+args = ["<%= settings.implementation %>"]
+factory.Proxy.abi = "<%= settings.abi %>"
+factory.Proxy.event = "Upgraded"
+factory.Proxy.arg = 0
+factory.Proxy.highlight = true

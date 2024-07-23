@@ -1,0 +1,60 @@
+name = "proxytest"
+version = "1"
+
+[var.owner]
+owner = "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266"
+
+[var.name]
+name = "Token"
+
+[var.symbol]
+symbol = "TKN"
+
+[var.decimals]
+decimals = "18"
+
+[var.initialSupply]
+decimals = "1000000"
+
+[deploy.SNXToken]
+artifact = "MintableTokenSNXUUPS"
+salt = "<%= settings.salt %>"
+args = [
+		"<%= settings.owner %>",
+    "<%= settings.name %>",
+    "<%= settings.symbol %>",
+		"<%= settings.decimals %>",
+    "<%= settings.initialSupply %>",
+]
+create2 = true
+highlight = true
+
+[deploy.OZToken]
+artifact = "MintableTokenOZUUPS"
+salt = "<%= settings.salt %>"
+args = [
+		"<%= settings.owner %>",
+    "<%= settings.name %>",
+    "<%= settings.symbol %>",
+		"<%= settings.decimals %>",
+    "<%= settings.initialSupply %>",
+]
+create2 = true
+highlight = true
+
+[clone.SNXProxy]
+source = "universal-upgradeable-proxy:1.0.0@main"
+var.implementation = "<%= contracts.SNXToken.address %>"
+var.abi = "<%= JSON.stringify(contracts.SNXToken.abi) %>"
+var.salt = "test"
+var.owner = "<%= settings.owner %>"
+
+depends = ["deploy.SNXToken"]
+
+[clone.OZProxy]
+source = "universal-upgradeable-proxy:1.0.0@oz"
+var.implementation = "<%= contracts.OZToken.address %>"
+var.abi = "<%= JSON.stringify(contracts.OZToken.abi) %>"
+var.owner = "<%= settings.owner %>"
+
+depends = ["deploy.OZToken"]
