@@ -13,8 +13,8 @@ if [ "$network" = "mainnet" ]; then
   $CANNON alter uma-oov3:1.0.0@main --chain-id $chainId set-contract-address IdentifierWhitelist 0xcF649d9Da4D1362C4DAEa67573430Bd6f945e570
   $CANNON alter uma-oov3:1.0.0@main --chain-id $chainId set-contract-address Store 0x54f44eA3D2e7aA0ac089c4d8F7C93C27844057BF
   $CANNON alter uma-oov3:1.0.0@main --chain-id $chainId set-contract-address AddressWhitelist 0xdBF90434dF0B98219f87d112F37d74B1D90758c7
-  $CANNON alter uma-oov3:1.0.0@main --chain-id $chainId set-contract-address MockOracleAncillary 0x514Ae88aB0d24088C0a9d8E76E66457DF200fEe3
   $CANNON alter uma-oov3:1.0.0@main --chain-id $chainId set-contract-address OptimisticOracleV3 0xfb55F43fB9F48F63f9269DB7Dde3BbBe1ebDC0dE
+  $CANNON alter uma-oov3:1.0.0@main --chain-id $chainId set-contract-address MockOracleAncillary 0x514Ae88aB0d24088C0a9d8E76E66457DF200fEe3
   # $CANNON alter uma-oov3:1.0.0@main --chain-id $chainId set-contract-address VotingToken 0x04Fa0d235C4abf4BcF4787aF4CF447DE572eF828
   # $CANNON alter uma-oov3:1.0.0@main --chain-id $chainId set-contract-address Voting 0x8B1631ab830d11531aE83725fDa4D86012eCCd77
   # $CANNON alter uma-oov3:1.0.0@main --chain-id $chainId set-contract-address Registry 0x3e532e6222afe9Bcf02DCB87216802c75D5113aE
