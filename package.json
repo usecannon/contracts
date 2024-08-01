@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "@synthetixio/core-contracts": "^3.3.19",
-    "@synthetixio/core-modules": "^3.3.19"
+    "@synthetixio/core-modules": "^3.3.19",
+    "@uma/core": "^2.59.1"
   }
 }
