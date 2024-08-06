@@ -1,2 +1,4 @@
 forge-std/=lib/forge-std/src/
 @synthetixio=node_modules/@synthetixio
+@uma=node_modules/@uma
+@openzeppelin=lib/openzeppelin-contracts
