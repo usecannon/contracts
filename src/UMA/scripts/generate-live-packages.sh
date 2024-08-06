@@ -63,10 +63,10 @@ if [ "$network" = "mainnet" ]; then
 
     
 elif [ "$network" = "sepolia" ]; then
-  $CANNON alter uma-oov3:1.0.0@main --chain-id $chainId set-contract-address Finder 0x40f941E48A552bF496B154Af6bf55725f18D77c3
-  $CANNON alter uma-oov3:1.0.0@main --chain-id $chainId set-contract-address IdentifierWhitelist 0xcF649d9Da4D1362C4DAEa67573430Bd6f945e570
-  $CANNON alter uma-oov3:1.0.0@main --chain-id $chainId set-contract-address Store 0x54f44eA3D2e7aA0ac089c4d8F7C93C27844057BF
-  $CANNON alter uma-oov3:1.0.0@main --chain-id $chainId set-contract-address AddressWhitelist 0xdBF90434dF0B98219f87d112F37d74B1D90758c7
-  $CANNON alter uma-oov3:1.0.0@main --chain-id $chainId set-contract-address MockOracleAncillary 0x514Ae88aB0d24088C0a9d8E76E66457DF200fEe3
-  $CANNON alter uma-oov3:1.0.0@main --chain-id $chainId set-contract-address OptimisticOracleV3 0xfb55F43fB9F48F63f9269DB7Dde3BbBe1ebDC0dE
+  $CANNON alter uma-oov3:1.0.0@main --chain-id $chainId set-contract-address Finder 0xf4C48eDAd256326086AEfbd1A53e1896815F8f13
+  $CANNON alter uma-oov3:1.0.0@main --chain-id $chainId set-contract-address IdentifierWhitelist 0xfcb6f77112951e1995d37542b519Fe0a85a1AA77
+  $CANNON alter uma-oov3:1.0.0@main --chain-id $chainId set-contract-address Store 0x39e7FFA77A4ac4D34021C6BbE4C8778d47F684F2
+  $CANNON alter uma-oov3:1.0.0@main --chain-id $chainId set-contract-address AddressWhitelist 0xE8DE4bcE27f6214dcE18D8a7629f233C66A97B84
+  $CANNON alter uma-oov3:1.0.0@main --chain-id $chainId set-contract-address OptimisticOracleV3 0xFd9e2642a170aDD10F53Ee14a93FcF2F31924944
+  $CANNON alter uma-oov3:1.0.0@main --chain-id $chainId set-contract-address MockOracleAncillary 0x5FE28AEa36420414692b1C907F7d0114d304eb0C
 fi

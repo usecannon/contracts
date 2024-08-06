@@ -12,6 +12,9 @@ fixed = "0"
 [var.weekly]
 weekly = "0"
 
+[var.minimumBond]
+minimumBond = "100e18"
+
 [var.defaultCurrency]
 defaultCurrency = ""
 
@@ -26,29 +29,32 @@ source = "uma-mock-oracle-ancillary:latest@main"
 
 [deploy.IdentifierWhitelist]
 artifact = "IdentifierWhitelist"
+from = "<%= settings.owner %>"
 
 [deploy.AddressWhitelist]
 artifact = "AddressWhitelist"
+from = "<%= settings.owner %>"
 
 [deploy.Store]
 artifact = "Store"
+from = "<%= settings.owner %>"
 args = [
   "<%= settings.fixed %>",
   "<%= settings.weekly %>",
-  "0x0000000000000000000000000000000000000000"
+  "0x0000000000000000000000000000000000000000",
 ]
 
 [deploy.Finder]
 artifact = "Finder"
 from = "<%= settings.owner %>"
 
-[invoke.add_oracle_impl]
+[invoke.add_mock_oracle_impl]
 target = ["Finder"]
 func = "changeImplementationAddress"
 from = "<%= settings.owner %>"
 args = [
   "0x4f7261636c650000000000000000000000000000000000000000000000000000",
-  "<%= MockOracleAncillary.MockOracleAncillary.address %>"
+  "<%= MockOracleAncillary.MockOracleAncillary.address %>",
 ]
 
 [invoke.add_iwhitelist_impl]
@@ -57,7 +63,7 @@ func = "changeImplementationAddress"
 from = "<%= settings.owner %>"
 args = [
   "0x4964656e74696669657257686974656c69737400000000000000000000000000",
-  "<%= IdentifierWhitelist.address %>"
+  "<%= IdentifierWhitelist.address %>",
 ]
 
 [invoke.add_awhitelist_impl]
@@ -66,7 +72,7 @@ func = "changeImplementationAddress"
 from = "<%= settings.owner %>"
 args = [
   "0x436f6c6c61746572616c57686974656c69737400000000000000000000000000",
-  "<%= AddressWhitelist.address %>"
+  "<%= AddressWhitelist.address %>",
 ]
 
 [invoke.add_store_impl]
@@ -75,22 +81,60 @@ func = "changeImplementationAddress"
 from = "<%= settings.owner %>"
 args = [
   "0x53746f7265000000000000000000000000000000000000000000000000000000",
-  "<%= Store.address %>"
+  "<%= Store.address %>",
 ]
 
 [deploy.OptimisticOracleV3]
 artifact = "OptimisticOracleV3"
 args = [
   "<%= contracts.Finder.address %>",
-  "<%= usdc.FiatTokenProxy.address %>",
-  "<%= settings.defaultLiveness %>"
+  "<%= settings.defaultCurrency || usdc.FiatTokenProxy.address %>",
+  "<%= settings.defaultLiveness %>",
 ]
 highlight = true
 
 depends = [
   "pull.usdc",
-  "invoke.add_oracle_impl", 
-  "invoke.add_iwhitelist_impl", 
-  "invoke.add_awhitelist_impl", 
-  "invoke.add_store_impl"
-  ]
+  "invoke.add_mock_oracle_impl",
+  "invoke.add_iwhitelist_impl",
+  "invoke.add_awhitelist_impl",
+  "invoke.add_store_impl",
+]
+
+[invoke.add_oraclev3_impl]
+target = ["Finder"]
+func = "changeImplementationAddress"
+from = "<%= settings.owner %>"
+args = [
+  "0x4f7074696d69737469634f7261636c6556330000000000000000000000000000",
+  "<%= OptimisticOracleV3.address %>",
+]
+
+depends = ["deploy.OptimisticOracleV3"]
+
+[invoke.add_currency_to_wl]
+target = ["AddressWhitelist"]
+func = "addToWhitelist"
+from = "<%= settings.owner %>"
+args = ["<%= settings.defaultCurrency || usdc.FiatTokenProxy.address %>"]
+
+depends = ["deploy.OptimisticOracleV3"]
+
+[invoke.add_identifier]
+target = ["IdentifierWhitelist"]
+func = "addSupportedIdentifier"
+from = "<%= settings.owner %>"
+args = ["0x4153534552545f54525554480000000000000000000000000000000000000000"]
+
+depends = ["deploy.OptimisticOracleV3"]
+
+[invoke.set_store_final_fee]
+target = ["Store"]
+func = "setFinalFee"
+from = "<%= settings.owner %>"
+args = [
+  "<%= settings.defaultCurrency || usdc.FiatTokenProxy.address %>",
+  "<%= settings.minimumBond / 2 %>"
+]
+
+depends = ["deploy.OptimisticOracleV3"]
