@@ -1,18 +1,17 @@
 name = "uma-mock-oracle-ancillary"
-version = "<%= package.version %>"
+version = "1.0.1"
 preset = 'main'
 description = "Cannon package for the UMA Oracle contract"
 
 [deploy.Timer]
-artifact = "Timer"
+artifact = "TimerOverride"
 
 [deploy.Finder]
-artifact = "Finder"
+artifact = "FinderOverride"
 
 [deploy.MockOracleAncillary]
-artifact = "MockOracleAncillary"
+artifact = "MockOracleAncillaryOverride"
 args = [
   "<%= contracts.Finder.address %>",
   "<%= contracts.Timer.address %>",
 ]
-
