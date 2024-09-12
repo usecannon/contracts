@@ -5,7 +5,7 @@ pragma solidity ^0.8.0;
 import { Store as StoreBase } from '@uma/core/contracts/data-verification-mechanism/implementation/Store.sol';
 import { FixedPoint } from '@uma/core/contracts/common/implementation/FixedPoint.sol';
 
-contract Store is StoreBase {
+contract StoreOverride is StoreBase {
       constructor(
         uint256 _fixedOracleFeePerSecondPerPfc,
         uint256 _weeklyDelayFeePerSecondPerPfc,
