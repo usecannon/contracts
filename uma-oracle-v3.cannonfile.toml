@@ -1,5 +1,5 @@
 name = "uma-oov3"
-version = "<%= package.version %>"
+version = "1.0.1"
 preset = "main"
 description = "Cannon package for the UMA Optimistic Oracle v3 contract"
 
@@ -28,15 +28,15 @@ source = "usdc:latest@main"
 source = "uma-mock-oracle-ancillary:latest@main"
 
 [deploy.IdentifierWhitelist]
-artifact = "IdentifierWhitelist"
+artifact = "IdentifierWhitelistOverride"
 from = "<%= settings.owner %>"
 
 [deploy.AddressWhitelist]
-artifact = "AddressWhitelist"
+artifact = "AddressWhitelistOverride"
 from = "<%= settings.owner %>"
 
 [deploy.Store]
-artifact = "Store"
+artifact = "StoreOverride"
 from = "<%= settings.owner %>"
 args = [
   "<%= settings.fixed %>",
@@ -45,7 +45,7 @@ args = [
 ]
 
 [deploy.Finder]
-artifact = "Finder"
+artifact = "FinderOverride"
 from = "<%= settings.owner %>"
 
 [invoke.add_mock_oracle_impl]
@@ -85,7 +85,7 @@ args = [
 ]
 
 [deploy.OptimisticOracleV3]
-artifact = "OptimisticOracleV3"
+artifact = "OptimisticOracleV3Override"
 args = [
   "<%= contracts.Finder.address %>",
   "<%= settings.defaultCurrency || usdc.FiatTokenProxy.address %>",

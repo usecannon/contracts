@@ -7,7 +7,7 @@ import { FinderInterface } from '@uma/core/contracts/data-verification-mechanism
 import "lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol";
 
 
-contract OptimisticOracleV3 is OptimisticOracleV3Base {
+contract OptimisticOracleV3Override is OptimisticOracleV3Base {
       using SafeERC20 for IERC20;
 
       /**
