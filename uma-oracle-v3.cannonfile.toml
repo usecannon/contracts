@@ -24,8 +24,9 @@ defaultLiveness = "7200"
 [pull.usdc]
 source = "usdc:latest@main"
 
-[pull.MockOracleAncillary]
-source = "uma-mock-oracle-ancillary:latest@main"
+[deploy.OracleSpoke]
+artifact = "OracleSpokeOverride"
+from = "<%= settings.owner %>"
 
 [deploy.IdentifierWhitelist]
 artifact = "IdentifierWhitelistOverride"
@@ -48,13 +49,13 @@ args = [
 artifact = "FinderOverride"
 from = "<%= settings.owner %>"
 
-[invoke.add_mock_oracle_impl]
+[invoke.add_oracle_impl]
 target = ["Finder"]
 func = "changeImplementationAddress"
 from = "<%= settings.owner %>"
 args = [
   "0x4f7261636c650000000000000000000000000000000000000000000000000000",
-  "<%= MockOracleAncillary.MockOracleAncillary.address %>",
+  "<%= OracleSpoke.OracleSpoke.address %>",
 ]
 
 [invoke.add_iwhitelist_impl]
@@ -95,7 +96,7 @@ highlight = true
 
 depends = [
   "pull.usdc",
-  "invoke.add_mock_oracle_impl",
+  "invoke.add_oracle_impl",
   "invoke.add_iwhitelist_impl",
   "invoke.add_awhitelist_impl",
   "invoke.add_store_impl",
