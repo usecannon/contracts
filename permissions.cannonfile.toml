@@ -1,0 +1,966 @@
+name = "cannon-permissions"
+version = "0.0.0"
+description = "Transactions to migrate ownership of all Cannon contracts"
+deployers = [
+  "0xca111279D6aeEc39849ed5CD2bA3045381643422",
+  "0x493E75825b862c355a4263C9C1CB6F650539B328"
+]
+
+[var.options]
+deployer = "0xca111279D6aeEc39849ed5CD2bA3045381643422"
+safe = "0x493E75825b862c355a4263C9C1CB6F650539B328"
+
+[pull.registry]
+source = "registry"
+
+[invoke.set_owner_uniswap]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('uniswap') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_uniswap]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('uniswap') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_uniswap"]
+
+[invoke.set_owner_uniswap_core]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('uniswap-core') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_uniswap_core]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('uniswap-core') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_uniswap_core"]
+
+[invoke.set_owner_uniswap_pool]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('uniswap-pool') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_uniswap_pool]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('uniswap-pool') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_uniswap_pool"]
+
+[invoke.set_owner_weth_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('weth-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_weth_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('weth-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_weth_token"]
+
+[invoke.set_owner_aaave_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('aaave-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_aaave_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('aaave-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_aaave_token"]
+
+[invoke.set_owner_aave_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('aave-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_aave_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('aave-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_aave_token"]
+
+[invoke.set_owner_bat_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('bat-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_bat_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('bat-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_bat_token"]
+
+[invoke.set_owner_busd_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('busd-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_busd_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('busd-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_busd_token"]
+
+[invoke.set_owner_dai_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('dai-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_dai_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('dai-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_dai_token"]
+
+[invoke.set_owner_enj_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('enj-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_enj_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('enj-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_enj_token"]
+
+[invoke.set_owner_knc_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('knc-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_knc_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('knc-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_knc_token"]
+
+[invoke.set_owner_lend_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('lend-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_lend_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('lend-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_lend_token"]
+
+[invoke.set_owner_link_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('link-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_link_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('link-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_link_token"]
+
+[invoke.set_owner_mana_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('mana-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_mana_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('mana-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_mana_token"]
+
+[invoke.set_owner_mkr_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('mkr-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_mkr_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('mkr-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_mkr_token"]
+
+[invoke.set_owner_ren_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('ren-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_ren_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('ren-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_ren_token"]
+
+[invoke.set_owner_rep_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('rep-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_rep_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('rep-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_rep_token"]
+
+[invoke.set_owner_stkaave_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('stkaave-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_stkaave_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('stkaave-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_stkaave_token"]
+
+[invoke.set_owner_tusd_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('tusd-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_tusd_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('tusd-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_tusd_token"]
+
+[invoke.set_owner_uni_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('uni-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_uni_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('uni-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_uni_token"]
+
+[invoke.set_owner_usdc_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('usdc-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_usdc_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('usdc-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_usdc_token"]
+
+[invoke.set_owner_usdt_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('usdt-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_usdt_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('usdt-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_usdt_token"]
+
+[invoke.set_owner_wbtc_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('wbtc-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_wbtc_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('wbtc-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_wbtc_token"]
+
+[invoke.set_owner_bnb_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('bnb-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_bnb_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('bnb-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_bnb_token"]
+
+[invoke.set_owner_shib_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('shib-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_shib_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('shib-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_shib_token"]
+
+[invoke.set_owner_arb_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('arb-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_arb_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('arb-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_arb_token"]
+
+[invoke.set_owner_w_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('w-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_w_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('w-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_w_token"]
+
+[invoke.set_owner_strk_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('strk-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_strk_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('strk-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_strk_token"]
+
+[invoke.set_owner_pepe_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('pepe-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_pepe_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('pepe-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_pepe_token"]
+
+[invoke.set_owner_usde_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('usde-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_usde_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('usde-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_usde_token"]
+
+[invoke.set_owner_wsteth_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('wsteth-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_wsteth_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('wsteth-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_wsteth_token"]
+
+[invoke.set_owner_susde_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('susde-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_susde_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('susde-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_susde_token"]
+
+[invoke.set_owner_safe_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('safe-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_safe_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('safe-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_safe_token"]
+
+[invoke.set_owner_op_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('op-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_op_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('op-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_op_token"]
+
+[invoke.set_owner_velo_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('velo-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_velo_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('velo-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_velo_token"]
+
+[invoke.set_owner_wbnb_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('wbnb-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_wbnb_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('wbnb-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_wbnb_token"]
+
+[invoke.set_owner_aero_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('aero-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_aero_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('aero-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_aero_token"]
+
+[invoke.set_owner_btc_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('btc-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_btc_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('btc-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_btc_token"]
+
+[invoke.set_owner_celo_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('celo-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_celo_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('celo-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_celo_token"]
+
+[invoke.set_owner_ens_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('ens-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_ens_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('ens-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_ens_token"]
+
+[invoke.set_owner_ankr_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('ankr-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_ankr_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('ankr-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_ankr_token"]
+
+[invoke.set_owner_bal_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('bal-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_bal_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('bal-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_bal_token"]
+
+[invoke.set_owner_band_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('band-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_band_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('band-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_band_token"]
+
+[invoke.set_owner_dydx_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('dydx-token') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_dydx_token]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('dydx-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_dydx_token"]
+
+[invoke.set_owner_chainlink_mock_v3_aggregator]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('chainlink-mock-v3-aggregator') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_chainlink_mock_v3_aggregator]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('chainlink-mock-v3-aggregator') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_chainlink_mock_v3_aggregator"]
+
+[invoke.set_owner_universal_upgradeable_proxy]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('universal-upgradeable-proxy') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_universal_upgradeable_proxy]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('universal-upgradeable-proxy') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_universal_upgradeable_proxy"]
+
+[invoke.set_owner_uma_mock_oracle_ancillary]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('uma-mock-oracle-ancillary') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_uma_mock_oracle_ancillary]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('uma-mock-oracle-ancillary') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_uma_mock_oracle_ancillary"]
+
+[invoke.set_owner_uma_oov3]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('uma-oov3') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_uma_oov3]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('uma-oov3') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_uma_oov3"]
+
+[invoke.set_owner_dummy23]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('dummy23') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_dummy23]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('dummy23') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_dummy23"]
+
+[invoke.set_owner_dummy24]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('dummy24') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_dummy24]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('dummy24') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_dummy24"]
+
+[invoke.set_owner_dummy25]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('dummy25') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_dummy25]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('dummy25') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_dummy25"]
+
+[invoke.set_owner_dummy27]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('dummy27') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_dummy27]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('dummy27') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_dummy27"]
+
+[invoke.set_owner_dummy28]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('dummy28') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_dummy28]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('dummy28') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_dummy28"]
+
+[invoke.set_owner_owned_greeter2]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('owned-greeter2') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_owned_greeter2]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('owned-greeter2') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_owned_greeter2"]
+
+[invoke.set_owner_package_test]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('package-test') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_package_test]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('package-test') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_package_test"]
+
+[invoke.set_owner_package_test2]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('package-test2') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_package_test2]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('package-test2') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_package_test2"]
+
+[invoke.set_owner_package_test3]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('package-test3') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_package_test3]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('package-test3') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_package_test3"]
+
+[invoke.set_owner_dummy21]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('dummy21') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_dummy21]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('dummy21') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_dummy21"]
+
+[invoke.set_owner_cannon_foundry_example6]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('cannon-foundry-example6') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_cannon_foundry_example6]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('cannon-foundry-example6') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_cannon_foundry_example6"]
+
+[invoke.set_owner_test]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('test') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_test]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('test') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_test"]
+
+[invoke.set_owner_test2]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('test2') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_test2]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('test2') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_test2"]
+
+[invoke.set_owner_test1]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('test1') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_test1]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('test1') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_test1"]
+
+[invoke.set_owner_test3]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('test3') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_test3]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('test3') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_test3"]
+
+[invoke.set_owner_usecannon_gitops_test]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('usecannon-gitops-test') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_usecannon_gitops_test]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('usecannon-gitops-test') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_usecannon_gitops_test"]
+
+[invoke.set_owner_my_package]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('my-package') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_my_package]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('my-package') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_my_package"]
+
+[invoke.set_owner_my_another_package]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('my-another-package') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_my_another_package]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('my-another-package') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_my_another_package"]
+
+[invoke.set_owner_registry_ignusmart]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('registry-ignusmart') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_registry_ignusmart]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('registry-ignusmart') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_registry_ignusmart"]
+
+[invoke.set_owner_owned_greeter_saeta]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('owned-greeter-saeta') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
+
+[invoke.set_publishers_owned_greeter_saeta]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('owned-greeter-saeta') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_owned_greeter_saeta"]
