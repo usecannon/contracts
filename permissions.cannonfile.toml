@@ -279,215 +279,215 @@ func = "setAdditionalPublishers"
 args = ["<%= formatBytes32String('tusd-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
 depends = ["invoke.set_owner_tusd_token"]
 
-[invoke.set_owner_uni_token]
-target = ["registry.Proxy"]
-from = "<%= settings.safe %>"
-func = "setPackageOwnership"
-args = ["<%= formatBytes32String('uni-token') %>", "<%= settings.safe %>"]
-depends = ["var.options", "pull.registry"]
+# [invoke.set_owner_uni_token]
+# target = ["registry.Proxy"]
+# from = "<%= settings.safe %>"
+# func = "setPackageOwnership"
+# args = ["<%= formatBytes32String('uni-token') %>", "<%= settings.safe %>"]
+# depends = ["var.options", "pull.registry"]
 
-[invoke.set_publishers_uni_token]
-target = ["registry.Proxy"]
-from = "<%= settings.safe %>"
-func = "setAdditionalPublishers"
-args = ["<%= formatBytes32String('uni-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
-depends = ["invoke.set_owner_uni_token"]
+# [invoke.set_publishers_uni_token]
+# target = ["registry.Proxy"]
+# from = "<%= settings.safe %>"
+# func = "setAdditionalPublishers"
+# args = ["<%= formatBytes32String('uni-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+# depends = ["invoke.set_owner_uni_token"]
 
-[invoke.set_owner_usdc_token]
-target = ["registry.Proxy"]
-from = "<%= settings.safe %>"
-func = "setPackageOwnership"
-args = ["<%= formatBytes32String('usdc-token') %>", "<%= settings.safe %>"]
-depends = ["var.options", "pull.registry"]
+# [invoke.set_owner_usdc_token]
+# target = ["registry.Proxy"]
+# from = "<%= settings.safe %>"
+# func = "setPackageOwnership"
+# args = ["<%= formatBytes32String('usdc-token') %>", "<%= settings.safe %>"]
+# depends = ["var.options", "pull.registry"]
 
-[invoke.set_publishers_usdc_token]
-target = ["registry.Proxy"]
-from = "<%= settings.safe %>"
-func = "setAdditionalPublishers"
-args = ["<%= formatBytes32String('usdc-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
-depends = ["invoke.set_owner_usdc_token"]
+# [invoke.set_publishers_usdc_token]
+# target = ["registry.Proxy"]
+# from = "<%= settings.safe %>"
+# func = "setAdditionalPublishers"
+# args = ["<%= formatBytes32String('usdc-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+# depends = ["invoke.set_owner_usdc_token"]
 
-[invoke.set_owner_usdt_token]
-target = ["registry.Proxy"]
-from = "<%= settings.safe %>"
-func = "setPackageOwnership"
-args = ["<%= formatBytes32String('usdt-token') %>", "<%= settings.safe %>"]
-depends = ["var.options", "pull.registry"]
+# [invoke.set_owner_usdt_token]
+# target = ["registry.Proxy"]
+# from = "<%= settings.safe %>"
+# func = "setPackageOwnership"
+# args = ["<%= formatBytes32String('usdt-token') %>", "<%= settings.safe %>"]
+# depends = ["var.options", "pull.registry"]
 
-[invoke.set_publishers_usdt_token]
-target = ["registry.Proxy"]
-from = "<%= settings.safe %>"
-func = "setAdditionalPublishers"
-args = ["<%= formatBytes32String('usdt-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
-depends = ["invoke.set_owner_usdt_token"]
+# [invoke.set_publishers_usdt_token]
+# target = ["registry.Proxy"]
+# from = "<%= settings.safe %>"
+# func = "setAdditionalPublishers"
+# args = ["<%= formatBytes32String('usdt-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+# depends = ["invoke.set_owner_usdt_token"]
 
-[invoke.set_owner_wbtc_token]
-target = ["registry.Proxy"]
-from = "<%= settings.safe %>"
-func = "setPackageOwnership"
-args = ["<%= formatBytes32String('wbtc-token') %>", "<%= settings.safe %>"]
-depends = ["var.options", "pull.registry"]
+# [invoke.set_owner_wbtc_token]
+# target = ["registry.Proxy"]
+# from = "<%= settings.safe %>"
+# func = "setPackageOwnership"
+# args = ["<%= formatBytes32String('wbtc-token') %>", "<%= settings.safe %>"]
+# depends = ["var.options", "pull.registry"]
 
-[invoke.set_publishers_wbtc_token]
-target = ["registry.Proxy"]
-from = "<%= settings.safe %>"
-func = "setAdditionalPublishers"
-args = ["<%= formatBytes32String('wbtc-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
-depends = ["invoke.set_owner_wbtc_token"]
+# [invoke.set_publishers_wbtc_token]
+# target = ["registry.Proxy"]
+# from = "<%= settings.safe %>"
+# func = "setAdditionalPublishers"
+# args = ["<%= formatBytes32String('wbtc-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+# depends = ["invoke.set_owner_wbtc_token"]
 
-[invoke.set_owner_bnb_token]
-target = ["registry.Proxy"]
-from = "<%= settings.safe %>"
-func = "setPackageOwnership"
-args = ["<%= formatBytes32String('bnb-token') %>", "<%= settings.safe %>"]
-depends = ["var.options", "pull.registry"]
+# [invoke.set_owner_bnb_token]
+# target = ["registry.Proxy"]
+# from = "<%= settings.safe %>"
+# func = "setPackageOwnership"
+# args = ["<%= formatBytes32String('bnb-token') %>", "<%= settings.safe %>"]
+# depends = ["var.options", "pull.registry"]
 
-[invoke.set_publishers_bnb_token]
-target = ["registry.Proxy"]
-from = "<%= settings.safe %>"
-func = "setAdditionalPublishers"
-args = ["<%= formatBytes32String('bnb-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
-depends = ["invoke.set_owner_bnb_token"]
+# [invoke.set_publishers_bnb_token]
+# target = ["registry.Proxy"]
+# from = "<%= settings.safe %>"
+# func = "setAdditionalPublishers"
+# args = ["<%= formatBytes32String('bnb-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+# depends = ["invoke.set_owner_bnb_token"]
 
-[invoke.set_owner_shib_token]
-target = ["registry.Proxy"]
-from = "<%= settings.safe %>"
-func = "setPackageOwnership"
-args = ["<%= formatBytes32String('shib-token') %>", "<%= settings.safe %>"]
-depends = ["var.options", "pull.registry"]
+# [invoke.set_owner_shib_token]
+# target = ["registry.Proxy"]
+# from = "<%= settings.safe %>"
+# func = "setPackageOwnership"
+# args = ["<%= formatBytes32String('shib-token') %>", "<%= settings.safe %>"]
+# depends = ["var.options", "pull.registry"]
 
-[invoke.set_publishers_shib_token]
-target = ["registry.Proxy"]
-from = "<%= settings.safe %>"
-func = "setAdditionalPublishers"
-args = ["<%= formatBytes32String('shib-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
-depends = ["invoke.set_owner_shib_token"]
+# [invoke.set_publishers_shib_token]
+# target = ["registry.Proxy"]
+# from = "<%= settings.safe %>"
+# func = "setAdditionalPublishers"
+# args = ["<%= formatBytes32String('shib-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+# depends = ["invoke.set_owner_shib_token"]
 
-[invoke.set_owner_arb_token]
-target = ["registry.Proxy"]
-from = "<%= settings.safe %>"
-func = "setPackageOwnership"
-args = ["<%= formatBytes32String('arb-token') %>", "<%= settings.safe %>"]
-depends = ["var.options", "pull.registry"]
+# [invoke.set_owner_arb_token]
+# target = ["registry.Proxy"]
+# from = "<%= settings.safe %>"
+# func = "setPackageOwnership"
+# args = ["<%= formatBytes32String('arb-token') %>", "<%= settings.safe %>"]
+# depends = ["var.options", "pull.registry"]
 
-[invoke.set_publishers_arb_token]
-target = ["registry.Proxy"]
-from = "<%= settings.safe %>"
-func = "setAdditionalPublishers"
-args = ["<%= formatBytes32String('arb-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
-depends = ["invoke.set_owner_arb_token"]
+# [invoke.set_publishers_arb_token]
+# target = ["registry.Proxy"]
+# from = "<%= settings.safe %>"
+# func = "setAdditionalPublishers"
+# args = ["<%= formatBytes32String('arb-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+# depends = ["invoke.set_owner_arb_token"]
 
-[invoke.set_owner_w_token]
-target = ["registry.Proxy"]
-from = "<%= settings.safe %>"
-func = "setPackageOwnership"
-args = ["<%= formatBytes32String('w-token') %>", "<%= settings.safe %>"]
-depends = ["var.options", "pull.registry"]
+# [invoke.set_owner_w_token]
+# target = ["registry.Proxy"]
+# from = "<%= settings.safe %>"
+# func = "setPackageOwnership"
+# args = ["<%= formatBytes32String('w-token') %>", "<%= settings.safe %>"]
+# depends = ["var.options", "pull.registry"]
 
-[invoke.set_publishers_w_token]
-target = ["registry.Proxy"]
-from = "<%= settings.safe %>"
-func = "setAdditionalPublishers"
-args = ["<%= formatBytes32String('w-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
-depends = ["invoke.set_owner_w_token"]
+# [invoke.set_publishers_w_token]
+# target = ["registry.Proxy"]
+# from = "<%= settings.safe %>"
+# func = "setAdditionalPublishers"
+# args = ["<%= formatBytes32String('w-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+# depends = ["invoke.set_owner_w_token"]
 
-[invoke.set_owner_strk_token]
-target = ["registry.Proxy"]
-from = "<%= settings.safe %>"
-func = "setPackageOwnership"
-args = ["<%= formatBytes32String('strk-token') %>", "<%= settings.safe %>"]
-depends = ["var.options", "pull.registry"]
+# [invoke.set_owner_strk_token]
+# target = ["registry.Proxy"]
+# from = "<%= settings.safe %>"
+# func = "setPackageOwnership"
+# args = ["<%= formatBytes32String('strk-token') %>", "<%= settings.safe %>"]
+# depends = ["var.options", "pull.registry"]
 
-[invoke.set_publishers_strk_token]
-target = ["registry.Proxy"]
-from = "<%= settings.safe %>"
-func = "setAdditionalPublishers"
-args = ["<%= formatBytes32String('strk-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
-depends = ["invoke.set_owner_strk_token"]
+# [invoke.set_publishers_strk_token]
+# target = ["registry.Proxy"]
+# from = "<%= settings.safe %>"
+# func = "setAdditionalPublishers"
+# args = ["<%= formatBytes32String('strk-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+# depends = ["invoke.set_owner_strk_token"]
 
-[invoke.set_owner_pepe_token]
-target = ["registry.Proxy"]
-from = "<%= settings.safe %>"
-func = "setPackageOwnership"
-args = ["<%= formatBytes32String('pepe-token') %>", "<%= settings.safe %>"]
-depends = ["var.options", "pull.registry"]
+# [invoke.set_owner_pepe_token]
+# target = ["registry.Proxy"]
+# from = "<%= settings.safe %>"
+# func = "setPackageOwnership"
+# args = ["<%= formatBytes32String('pepe-token') %>", "<%= settings.safe %>"]
+# depends = ["var.options", "pull.registry"]
 
-[invoke.set_publishers_pepe_token]
-target = ["registry.Proxy"]
-from = "<%= settings.safe %>"
-func = "setAdditionalPublishers"
-args = ["<%= formatBytes32String('pepe-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
-depends = ["invoke.set_owner_pepe_token"]
+# [invoke.set_publishers_pepe_token]
+# target = ["registry.Proxy"]
+# from = "<%= settings.safe %>"
+# func = "setAdditionalPublishers"
+# args = ["<%= formatBytes32String('pepe-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+# depends = ["invoke.set_owner_pepe_token"]
 
-[invoke.set_owner_usde_token]
-target = ["registry.Proxy"]
-from = "<%= settings.safe %>"
-func = "setPackageOwnership"
-args = ["<%= formatBytes32String('usde-token') %>", "<%= settings.safe %>"]
-depends = ["var.options", "pull.registry"]
+# [invoke.set_owner_usde_token]
+# target = ["registry.Proxy"]
+# from = "<%= settings.safe %>"
+# func = "setPackageOwnership"
+# args = ["<%= formatBytes32String('usde-token') %>", "<%= settings.safe %>"]
+# depends = ["var.options", "pull.registry"]
 
-[invoke.set_publishers_usde_token]
-target = ["registry.Proxy"]
-from = "<%= settings.safe %>"
-func = "setAdditionalPublishers"
-args = ["<%= formatBytes32String('usde-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
-depends = ["invoke.set_owner_usde_token"]
+# [invoke.set_publishers_usde_token]
+# target = ["registry.Proxy"]
+# from = "<%= settings.safe %>"
+# func = "setAdditionalPublishers"
+# args = ["<%= formatBytes32String('usde-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+# depends = ["invoke.set_owner_usde_token"]
 
-[invoke.set_owner_wsteth_token]
-target = ["registry.Proxy"]
-from = "<%= settings.safe %>"
-func = "setPackageOwnership"
-args = ["<%= formatBytes32String('wsteth-token') %>", "<%= settings.safe %>"]
-depends = ["var.options", "pull.registry"]
+# [invoke.set_owner_wsteth_token]
+# target = ["registry.Proxy"]
+# from = "<%= settings.safe %>"
+# func = "setPackageOwnership"
+# args = ["<%= formatBytes32String('wsteth-token') %>", "<%= settings.safe %>"]
+# depends = ["var.options", "pull.registry"]
 
-[invoke.set_publishers_wsteth_token]
-target = ["registry.Proxy"]
-from = "<%= settings.safe %>"
-func = "setAdditionalPublishers"
-args = ["<%= formatBytes32String('wsteth-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
-depends = ["invoke.set_owner_wsteth_token"]
+# [invoke.set_publishers_wsteth_token]
+# target = ["registry.Proxy"]
+# from = "<%= settings.safe %>"
+# func = "setAdditionalPublishers"
+# args = ["<%= formatBytes32String('wsteth-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+# depends = ["invoke.set_owner_wsteth_token"]
 
-[invoke.set_owner_susde_token]
-target = ["registry.Proxy"]
-from = "<%= settings.safe %>"
-func = "setPackageOwnership"
-args = ["<%= formatBytes32String('susde-token') %>", "<%= settings.safe %>"]
-depends = ["var.options", "pull.registry"]
+# [invoke.set_owner_susde_token]
+# target = ["registry.Proxy"]
+# from = "<%= settings.safe %>"
+# func = "setPackageOwnership"
+# args = ["<%= formatBytes32String('susde-token') %>", "<%= settings.safe %>"]
+# depends = ["var.options", "pull.registry"]
 
-[invoke.set_publishers_susde_token]
-target = ["registry.Proxy"]
-from = "<%= settings.safe %>"
-func = "setAdditionalPublishers"
-args = ["<%= formatBytes32String('susde-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
-depends = ["invoke.set_owner_susde_token"]
+# [invoke.set_publishers_susde_token]
+# target = ["registry.Proxy"]
+# from = "<%= settings.safe %>"
+# func = "setAdditionalPublishers"
+# args = ["<%= formatBytes32String('susde-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+# depends = ["invoke.set_owner_susde_token"]
 
-[invoke.set_owner_safe_token]
-target = ["registry.Proxy"]
-from = "<%= settings.safe %>"
-func = "setPackageOwnership"
-args = ["<%= formatBytes32String('safe-token') %>", "<%= settings.safe %>"]
-depends = ["var.options", "pull.registry"]
+# [invoke.set_owner_safe_token]
+# target = ["registry.Proxy"]
+# from = "<%= settings.safe %>"
+# func = "setPackageOwnership"
+# args = ["<%= formatBytes32String('safe-token') %>", "<%= settings.safe %>"]
+# depends = ["var.options", "pull.registry"]
 
-[invoke.set_publishers_safe_token]
-target = ["registry.Proxy"]
-from = "<%= settings.safe %>"
-func = "setAdditionalPublishers"
-args = ["<%= formatBytes32String('safe-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
-depends = ["invoke.set_owner_safe_token"]
+# [invoke.set_publishers_safe_token]
+# target = ["registry.Proxy"]
+# from = "<%= settings.safe %>"
+# func = "setAdditionalPublishers"
+# args = ["<%= formatBytes32String('safe-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+# depends = ["invoke.set_owner_safe_token"]
 
-[invoke.set_owner_op_token]
-target = ["registry.Proxy"]
-from = "<%= settings.safe %>"
-func = "setPackageOwnership"
-args = ["<%= formatBytes32String('op-token') %>", "<%= settings.safe %>"]
-depends = ["var.options", "pull.registry"]
+# [invoke.set_owner_op_token]
+# target = ["registry.Proxy"]
+# from = "<%= settings.safe %>"
+# func = "setPackageOwnership"
+# args = ["<%= formatBytes32String('op-token') %>", "<%= settings.safe %>"]
+# depends = ["var.options", "pull.registry"]
 
-[invoke.set_publishers_op_token]
-target = ["registry.Proxy"]
-from = "<%= settings.safe %>"
-func = "setAdditionalPublishers"
-args = ["<%= formatBytes32String('op-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
-depends = ["invoke.set_owner_op_token"]
+# [invoke.set_publishers_op_token]
+# target = ["registry.Proxy"]
+# from = "<%= settings.safe %>"
+# func = "setAdditionalPublishers"
+# args = ["<%= formatBytes32String('op-token') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+# depends = ["invoke.set_owner_op_token"]
 
 # [invoke.set_owner_velo_token]
 # target = ["registry.Proxy"]
