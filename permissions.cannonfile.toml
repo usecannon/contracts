@@ -755,212 +755,212 @@ func = "setAdditionalPublishers"
 args = ["<%= formatBytes32String('dummy28') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
 depends = ["invoke.set_owner_dummy28"]
 
-# [invoke.set_owner_owned_greeter2]
-# target = ["registry.Proxy"]
-# from = "<%= settings.safe %>"
-# func = "setPackageOwnership"
-# args = ["<%= formatBytes32String('owned-greeter2') %>", "<%= settings.safe %>"]
-# depends = ["var.options", "pull.registry"]
+[invoke.set_owner_owned_greeter2]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('owned-greeter2') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
 
-# [invoke.set_publishers_owned_greeter2]
-# target = ["registry.Proxy"]
-# from = "<%= settings.safe %>"
-# func = "setAdditionalPublishers"
-# args = ["<%= formatBytes32String('owned-greeter2') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
-# depends = ["invoke.set_owner_owned_greeter2"]
+[invoke.set_publishers_owned_greeter2]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('owned-greeter2') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_owned_greeter2"]
 
-# [invoke.set_owner_package_test]
-# target = ["registry.Proxy"]
-# from = "<%= settings.safe %>"
-# func = "setPackageOwnership"
-# args = ["<%= formatBytes32String('package-test') %>", "<%= settings.safe %>"]
-# depends = ["var.options", "pull.registry"]
+[invoke.set_owner_package_test]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('package-test') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
 
-# [invoke.set_publishers_package_test]
-# target = ["registry.Proxy"]
-# from = "<%= settings.safe %>"
-# func = "setAdditionalPublishers"
-# args = ["<%= formatBytes32String('package-test') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
-# depends = ["invoke.set_owner_package_test"]
+[invoke.set_publishers_package_test]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('package-test') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_package_test"]
 
-# [invoke.set_owner_package_test2]
-# target = ["registry.Proxy"]
-# from = "<%= settings.safe %>"
-# func = "setPackageOwnership"
-# args = ["<%= formatBytes32String('package-test2') %>", "<%= settings.safe %>"]
-# depends = ["var.options", "pull.registry"]
+[invoke.set_owner_package_test2]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('package-test2') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
 
-# [invoke.set_publishers_package_test2]
-# target = ["registry.Proxy"]
-# from = "<%= settings.safe %>"
-# func = "setAdditionalPublishers"
-# args = ["<%= formatBytes32String('package-test2') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
-# depends = ["invoke.set_owner_package_test2"]
+[invoke.set_publishers_package_test2]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('package-test2') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_package_test2"]
 
-# [invoke.set_owner_package_test3]
-# target = ["registry.Proxy"]
-# from = "<%= settings.safe %>"
-# func = "setPackageOwnership"
-# args = ["<%= formatBytes32String('package-test3') %>", "<%= settings.safe %>"]
-# depends = ["var.options", "pull.registry"]
+[invoke.set_owner_package_test3]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('package-test3') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
 
-# [invoke.set_publishers_package_test3]
-# target = ["registry.Proxy"]
-# from = "<%= settings.safe %>"
-# func = "setAdditionalPublishers"
-# args = ["<%= formatBytes32String('package-test3') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
-# depends = ["invoke.set_owner_package_test3"]
+[invoke.set_publishers_package_test3]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('package-test3') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_package_test3"]
 
-# [invoke.set_owner_dummy21]
-# target = ["registry.Proxy"]
-# from = "<%= settings.safe %>"
-# func = "setPackageOwnership"
-# args = ["<%= formatBytes32String('dummy21') %>", "<%= settings.safe %>"]
-# depends = ["var.options", "pull.registry"]
+[invoke.set_owner_dummy21]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('dummy21') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
 
-# [invoke.set_publishers_dummy21]
-# target = ["registry.Proxy"]
-# from = "<%= settings.safe %>"
-# func = "setAdditionalPublishers"
-# args = ["<%= formatBytes32String('dummy21') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
-# depends = ["invoke.set_owner_dummy21"]
+[invoke.set_publishers_dummy21]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('dummy21') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_dummy21"]
 
-# [invoke.set_owner_cannon_foundry_example6]
-# target = ["registry.Proxy"]
-# from = "<%= settings.safe %>"
-# func = "setPackageOwnership"
-# args = ["<%= formatBytes32String('cannon-foundry-example6') %>", "<%= settings.safe %>"]
-# depends = ["var.options", "pull.registry"]
+[invoke.set_owner_cannon_foundry_example6]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('cannon-foundry-example6') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
 
-# [invoke.set_publishers_cannon_foundry_example6]
-# target = ["registry.Proxy"]
-# from = "<%= settings.safe %>"
-# func = "setAdditionalPublishers"
-# args = ["<%= formatBytes32String('cannon-foundry-example6') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
-# depends = ["invoke.set_owner_cannon_foundry_example6"]
+[invoke.set_publishers_cannon_foundry_example6]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('cannon-foundry-example6') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_cannon_foundry_example6"]
 
-# [invoke.set_owner_test]
-# target = ["registry.Proxy"]
-# from = "<%= settings.safe %>"
-# func = "setPackageOwnership"
-# args = ["<%= formatBytes32String('test') %>", "<%= settings.safe %>"]
-# depends = ["var.options", "pull.registry"]
+[invoke.set_owner_test]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('test') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
 
-# [invoke.set_publishers_test]
-# target = ["registry.Proxy"]
-# from = "<%= settings.safe %>"
-# func = "setAdditionalPublishers"
-# args = ["<%= formatBytes32String('test') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
-# depends = ["invoke.set_owner_test"]
+[invoke.set_publishers_test]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('test') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_test"]
 
-# [invoke.set_owner_test2]
-# target = ["registry.Proxy"]
-# from = "<%= settings.safe %>"
-# func = "setPackageOwnership"
-# args = ["<%= formatBytes32String('test2') %>", "<%= settings.safe %>"]
-# depends = ["var.options", "pull.registry"]
+[invoke.set_owner_test2]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('test2') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
 
-# [invoke.set_publishers_test2]
-# target = ["registry.Proxy"]
-# from = "<%= settings.safe %>"
-# func = "setAdditionalPublishers"
-# args = ["<%= formatBytes32String('test2') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
-# depends = ["invoke.set_owner_test2"]
+[invoke.set_publishers_test2]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('test2') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_test2"]
 
-# [invoke.set_owner_test1]
-# target = ["registry.Proxy"]
-# from = "<%= settings.safe %>"
-# func = "setPackageOwnership"
-# args = ["<%= formatBytes32String('test1') %>", "<%= settings.safe %>"]
-# depends = ["var.options", "pull.registry"]
+[invoke.set_owner_test1]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('test1') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
 
-# [invoke.set_publishers_test1]
-# target = ["registry.Proxy"]
-# from = "<%= settings.safe %>"
-# func = "setAdditionalPublishers"
-# args = ["<%= formatBytes32String('test1') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
-# depends = ["invoke.set_owner_test1"]
+[invoke.set_publishers_test1]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('test1') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_test1"]
 
-# [invoke.set_owner_test3]
-# target = ["registry.Proxy"]
-# from = "<%= settings.safe %>"
-# func = "setPackageOwnership"
-# args = ["<%= formatBytes32String('test3') %>", "<%= settings.safe %>"]
-# depends = ["var.options", "pull.registry"]
+[invoke.set_owner_test3]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('test3') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
 
-# [invoke.set_publishers_test3]
-# target = ["registry.Proxy"]
-# from = "<%= settings.safe %>"
-# func = "setAdditionalPublishers"
-# args = ["<%= formatBytes32String('test3') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
-# depends = ["invoke.set_owner_test3"]
+[invoke.set_publishers_test3]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('test3') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_test3"]
 
-# [invoke.set_owner_usecannon_gitops_test]
-# target = ["registry.Proxy"]
-# from = "<%= settings.safe %>"
-# func = "setPackageOwnership"
-# args = ["<%= formatBytes32String('usecannon-gitops-test') %>", "<%= settings.safe %>"]
-# depends = ["var.options", "pull.registry"]
+[invoke.set_owner_usecannon_gitops_test]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('usecannon-gitops-test') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
 
-# [invoke.set_publishers_usecannon_gitops_test]
-# target = ["registry.Proxy"]
-# from = "<%= settings.safe %>"
-# func = "setAdditionalPublishers"
-# args = ["<%= formatBytes32String('usecannon-gitops-test') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
-# depends = ["invoke.set_owner_usecannon_gitops_test"]
+[invoke.set_publishers_usecannon_gitops_test]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('usecannon-gitops-test') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_usecannon_gitops_test"]
 
-# [invoke.set_owner_my_package]
-# target = ["registry.Proxy"]
-# from = "<%= settings.safe %>"
-# func = "setPackageOwnership"
-# args = ["<%= formatBytes32String('my-package') %>", "<%= settings.safe %>"]
-# depends = ["var.options", "pull.registry"]
+[invoke.set_owner_my_package]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('my-package') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
 
-# [invoke.set_publishers_my_package]
-# target = ["registry.Proxy"]
-# from = "<%= settings.safe %>"
-# func = "setAdditionalPublishers"
-# args = ["<%= formatBytes32String('my-package') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
-# depends = ["invoke.set_owner_my_package"]
+[invoke.set_publishers_my_package]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('my-package') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_my_package"]
 
-# [invoke.set_owner_my_another_package]
-# target = ["registry.Proxy"]
-# from = "<%= settings.safe %>"
-# func = "setPackageOwnership"
-# args = ["<%= formatBytes32String('my-another-package') %>", "<%= settings.safe %>"]
-# depends = ["var.options", "pull.registry"]
+[invoke.set_owner_my_another_package]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('my-another-package') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
 
-# [invoke.set_publishers_my_another_package]
-# target = ["registry.Proxy"]
-# from = "<%= settings.safe %>"
-# func = "setAdditionalPublishers"
-# args = ["<%= formatBytes32String('my-another-package') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
-# depends = ["invoke.set_owner_my_another_package"]
+[invoke.set_publishers_my_another_package]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('my-another-package') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_my_another_package"]
 
-# [invoke.set_owner_registry_ignusmart]
-# target = ["registry.Proxy"]
-# from = "<%= settings.safe %>"
-# func = "setPackageOwnership"
-# args = ["<%= formatBytes32String('registry-ignusmart') %>", "<%= settings.safe %>"]
-# depends = ["var.options", "pull.registry"]
+[invoke.set_owner_registry_ignusmart]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('registry-ignusmart') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
 
-# [invoke.set_publishers_registry_ignusmart]
-# target = ["registry.Proxy"]
-# from = "<%= settings.safe %>"
-# func = "setAdditionalPublishers"
-# args = ["<%= formatBytes32String('registry-ignusmart') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
-# depends = ["invoke.set_owner_registry_ignusmart"]
+[invoke.set_publishers_registry_ignusmart]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('registry-ignusmart') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_registry_ignusmart"]
 
-# [invoke.set_owner_owned_greeter_saeta]
-# target = ["registry.Proxy"]
-# from = "<%= settings.safe %>"
-# func = "setPackageOwnership"
-# args = ["<%= formatBytes32String('owned-greeter-saeta') %>", "<%= settings.safe %>"]
-# depends = ["var.options", "pull.registry"]
+[invoke.set_owner_owned_greeter_saeta]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setPackageOwnership"
+args = ["<%= formatBytes32String('owned-greeter-saeta') %>", "<%= settings.safe %>"]
+depends = ["var.options", "pull.registry"]
 
-# [invoke.set_publishers_owned_greeter_saeta]
-# target = ["registry.Proxy"]
-# from = "<%= settings.safe %>"
-# func = "setAdditionalPublishers"
-# args = ["<%= formatBytes32String('owned-greeter-saeta') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
-# depends = ["invoke.set_owner_owned_greeter_saeta"]
+[invoke.set_publishers_owned_greeter_saeta]
+target = ["registry.Proxy"]
+from = "<%= settings.safe %>"
+func = "setAdditionalPublishers"
+args = ["<%= formatBytes32String('owned-greeter-saeta') %>", ["<%= settings.deployer %>"], ["<%= settings.deployer %>"]]
+depends = ["invoke.set_owner_owned_greeter_saeta"]
