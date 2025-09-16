@@ -20,7 +20,7 @@ contract MintableTokenPermissionlessMint is ERC20 {
    * @dev Creates `amount` tokens and assigns them to `to`, increasing
    * the total supply. Only accessible by the contract owner.
    */
-  function mint(uint256 amount, address to) external {
+  function mint(address to, uint256 amount) external {
     _mint(to, amount);
   }
 
